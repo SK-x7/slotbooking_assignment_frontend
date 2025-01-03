@@ -9,7 +9,7 @@ export interface TableSlot {
   [key: string]: string[]; // Key is the date string (e.g., "2025-01-04"), value is an array of time slots
 }
 async function page({params}:{params:{tableId:string}}) {
-    const tableId=await params.tableId;
+    const tableId=params.tableId;
     const table=await getTableFromApi(tableId);
     const tableSlots:TableSlot[]=await getTableSlotsFromApi(tableId);
     // console.log(tableSlots);

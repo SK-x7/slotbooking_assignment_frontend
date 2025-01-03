@@ -5,12 +5,12 @@ import { redirect } from "next/navigation";
 export interface newBookingData{
     name:string,
     phoneNum:string,
-    numGuests:Number,
+    numGuests:number,
     observations:string,
     startDate:Date|string,
     endDate:Date|string,
-    price:Number,
-    tableId:Number
+    price:number,
+    tableId:number
 }
 
 const API_URL  = "https://slotbooking-assignment-backend.vercel.app";

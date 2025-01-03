@@ -92,7 +92,7 @@ function DateSelector({
   const [isClient, setIsClient] = useState(false);
 
   // Ensure the hook is called unconditionally
-  const { slots, setSlots, selectedDate, setSelectedDate, setSelectedSlot } =
+  const { setSlots, selectedDate, setSelectedDate, setSelectedSlot } =
     useReservationContext();
 
   useEffect(() => {

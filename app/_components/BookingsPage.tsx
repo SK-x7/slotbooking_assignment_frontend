@@ -8,12 +8,12 @@ import { getUserBookingsFromApi } from '../_lib/data-service';
 
 interface bookingInterface {
   id:null|undefined;
-  numGuests:Number;
+  numGuests:number;
   startDate:Date;
   endDate:Date;
-  price:Number;
+  price:number;
   observations:string;
-  tableId:Number
+  tableId:number
   name:string
   phoneNum:string
 }
@@ -21,7 +21,7 @@ interface bookingInterface {
 
 
 
-function page({children}:{children:React.ReactNode}) {
+function Page() {
   const [bookings, setBookings] = useState([])
   const { username } = useUser()||localStorage.getItem('username');
   const [isLoading, setIsLoading] = useState(true);  // Add loading state
@@ -79,4 +79,4 @@ function page({children}:{children:React.ReactNode}) {
   );
 }
 
-export default page;
+export default Page;

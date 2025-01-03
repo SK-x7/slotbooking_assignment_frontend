@@ -1,7 +1,7 @@
 "use client"
 
 import { redirect } from 'next/navigation';
-import React, { FormEvent, useState } from 'react'
+import React from 'react';
 import { useUser } from './UserContext';
 
 function UserLoginForm() {

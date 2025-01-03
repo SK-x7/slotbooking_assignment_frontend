@@ -4,12 +4,12 @@ import { createBooking, newBookingData } from "./data-service";
 import { revalidatePath } from "next/cache";
 import { bookingDataInterface } from "../_components/ReservationForm";
 
-interface FormDataInterface {
-  get(name: string): string | null;
-  get(phoneNum: string): string | null;
-  get(numGuests: string): string | null;
-  get(observations: string): string | null;
-}
+// interface FormDataInterface {
+//   get(name: string): string | null;
+//   get(phoneNum: string): string | null;
+//   get(numGuests: string): string | null;
+//   get(observations: string): string | null;
+// }
 
 export async function createReservationAction({
   bookingData,

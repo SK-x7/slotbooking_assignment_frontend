@@ -1,6 +1,5 @@
 
 import Image from "next/image";
-import { text } from "stream/consumers";
 import UserLoginForm from "./_components/landingCard";
 
 export default function Home() {

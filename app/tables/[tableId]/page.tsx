@@ -4,12 +4,13 @@ import DateSelector from '../../_components/DateSelector';
 import TimeSlotSelector from '../../_components/TimeSlotSelector';
 import ReservationForm from '../../_components/ReservationForm'
 import { getTableSlotsFromApi } from '../../_lib/data-service';
+import { PageProps } from '@/.next/types/app/tables/page';
 
 export interface TableSlot {
   [key: string]: string[]; // Key is the date string (e.g., "2025-01-04"), value is an array of time slots
 }
-async function page({params}:{params:{tableId:string}}) {
-    const tableId=params.tableId;
+async function page(x:PageProps) {
+    const {tableId}=await x.params;
     const table=await getTableFromApi(tableId);
     const tableSlots:TableSlot[]=await getTableSlotsFromApi(tableId);
     // console.log(tableSlots);

@@ -1,8 +1,10 @@
 # About the Project
 
-This project was completed as part of the assignment provided by [PureSoft Labs OÜ]. The Assignment was to develop a responsive restaurant table booking system using Next.js with Typescript for the frontend and Node.js with Express for backend functionality.
+This project was completed as part of the assignment provided by [https://neina.co/]. The Assignment was to develop a responsive restaurant table booking system using Next.js with Typescript for the frontend and Node.js with Express for backend functionality.
 
-**Project link 👉** : https://slotbooking-assignment-frontend.vercel.app/ 
+- **Project link 👉** : https://slotbooking-assignment-frontend.vercel.app/ 
+- **Back-End Repo 👉** : https://github.com/SK-x7/slotbooking_assignment_backend
+
 
 ## The app needed to include the following core features:
 

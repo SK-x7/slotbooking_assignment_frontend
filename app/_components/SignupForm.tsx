@@ -1,9 +1,9 @@
 "use client"
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import { useUser } from './UserContext';
 import { z } from 'zod';
 import { signupAction, userDataInterface } from '../_lib/actions';
+import { useUser } from './UserContext';
 
 
 // Define Zod schema with updated validations
@@ -31,17 +31,8 @@ const signupSchema = z
 
 function SignupForm() {
   const { setUsername,setIsLoggedIn } = useUser();
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const router = useRouter();
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    e.preventDefault();
-    setUsername(e.target.value);
-    if (localStorage) {
-      localStorage.setItem("username", e.target.value);
-    }
-  }
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -82,7 +73,6 @@ function SignupForm() {
             alert(error.message);
           }
         });
-        setErrors(formattedErrors);
     }
     }
   }

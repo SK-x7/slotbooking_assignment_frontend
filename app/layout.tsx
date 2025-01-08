@@ -46,7 +46,7 @@ export default function RootLayout({
     <Header></Header>
     
     {/* <main className="flex-1 overflow-y-scroll"> */}
-    <main className="flex-1">
+    <main className="flex flex-1">
       {children}
     </main>
     

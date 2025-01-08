@@ -1,6 +1,7 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import {useEffect,useState} from 'react';
 import { z } from 'zod';
 import { loginAction, userDataInterface } from '../_lib/actions';
 import { useUser } from './UserContext';
@@ -74,6 +75,14 @@ function LoginForm() {
       }
     }
 
+    const [isClient, setIsClient] = useState(false);
+    useEffect(() => {
+      setIsClient(true);
+    }, []);
+    
+    
+  
+    if (!isClient) return <div></div>;
     
   return (
     <form 

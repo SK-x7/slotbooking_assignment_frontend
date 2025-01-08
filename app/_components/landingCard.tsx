@@ -4,12 +4,8 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 function LandingCard() {
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return <div></div>;
+ 
+  
     
     
   return (

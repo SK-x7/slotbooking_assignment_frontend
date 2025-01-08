@@ -91,7 +91,7 @@ export async function signupUser(userData:userDataInterface) {
     console.log(userData,"--------------------------")
     // localhost:8080/api/v1/bookings/satyen
     // const res = await axios.post(`${API_URL}/api/v1/users`,userData);
-    const res = await axios.post(`http:localhost:8080/api/v1/users/signup`,userData);
+    const res = await axios.post(`${API_URL}/api/v1/users/signup`,userData);
     // console.log(res.data);
     if(res?.data){
         return res?.data;
@@ -114,7 +114,7 @@ export async function loginUser(userData:userDataInterface) {
     // console.log(userData,"--------------------------")
     // localhost:8080/api/v1/bookings/satyen
     // const res = await axios.post(`${API_URL}/api/v1/users`,userData);
-    const res = await axios.post(`http:localhost:8080/api/v1/users`,userData);
+    const res = await axios.post(`${API_URL}/api/v1/users`,userData);
     // console.log(res.data);
     if(res?.data){
         return res?.data;

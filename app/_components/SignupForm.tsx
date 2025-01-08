@@ -1,6 +1,6 @@
 "use client"
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { z } from 'zod';
 import { signupAction, userDataInterface } from '../_lib/actions';
 import { useUser } from './UserContext';
@@ -76,6 +76,16 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     }
     }
   }
+  
+  
+  const [isClient, setIsClient] = useState(false);
+    useEffect(() => {
+      setIsClient(true);
+    }, []);
+    
+    
+  
+    if (!isClient) return <div></div>;
 
   return (
     <form

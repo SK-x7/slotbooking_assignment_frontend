@@ -1,6 +1,6 @@
 "use client"
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React from 'react';
 import { z } from 'zod';
 import { signupAction, userDataInterface } from '../_lib/actions';
 import { useUser } from './UserContext';

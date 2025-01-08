@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { useUser } from './UserContext';
 
 function LandingCard() {
   const [isClient, setIsClient] = useState(false);

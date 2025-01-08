@@ -7,11 +7,10 @@ import BookingsPage from '../_components/BookingsPage';
 function page() {
 return (
     <>
-        <BookingsPage>
-            {/* <Bookings username={username}></Bookings> */}
-        </BookingsPage>
+        <BookingsPage></BookingsPage>
     </>
   );
+  
 }
 
 export default page;

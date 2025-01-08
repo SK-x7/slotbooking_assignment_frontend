@@ -454,6 +454,7 @@ import { useEffect, useState } from "react";
 import { useReservationContext } from "./ReservationContext";
 import SubmitButton from "./SubmitButton";
 import { createReservationAction } from "../_lib/actions";
+import { useUser } from "./UserContext";
 
 export interface bookingDataInterface {
   startDate: Date | string;
@@ -474,6 +475,7 @@ function ReservationForm({ table }: { table: tableDataInterface }) {
 
   const { selectedSlot, setSelectedSlot, selectedDate, setSelectedDate } =
     useReservationContext();
+    const {username} = useUser();
 
   const { maxNumOfGuests, id, price } = table;
 
@@ -570,29 +572,29 @@ function ReservationForm({ table }: { table: tableDataInterface }) {
     <div className="!w-full bg-gray-800">
       <form
         action={handleSubmit}
-        className="bg-primary-900 py-10 px-5 sm:px-8 md:px-16 text-lg flex gap-5 flex-col text-white"
+        className="bg-primary-900 p-3 sm:py-10 sm:px-8 md:px-16 lg:px-8 text-lg flex gap-5 flex-col text-white"
       >
-        <div className="space-y-2">
-          <label htmlFor="name">Enter Your Name :</label>
+        {/* <div className="space-y-2"> */}
+          {/* <label htmlFor="name">Enter Your Full Name :</label> */}
           <input
             name="name"
+            hidden
             id="name"
-            defaultValue=""
-            className={`px-5 py-3 text-black ${
-              errors.name ? "border border-red-500" : ""
-            }`}
+            readOnly
+            value={username}
+            className={`px-5 py-3 text-black bg-gray-200`}
             type="text"
           />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-        </div>
+          {/* {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>} */}
+        {/* </div> */}
 
-        <div className="space-y-2">
+        <div className=""> 
           <label htmlFor="phoneNum">Enter Contact Number :</label>
           <input
             name="phoneNum"
             id="phoneNum"
             defaultValue=""
-            className={`px-5 py-3 text-black ${
+            className={`px-5 py-3 mt-2 w-full text-black bg-gray-200${
               errors.phoneNum ? "border border-red-500" : ""
             }`}
             type="text"
@@ -607,7 +609,7 @@ function ReservationForm({ table }: { table: tableDataInterface }) {
           <select
             name="numGuests"
             id="numGuests"
-            className={`px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm bg-transparent ${
+            className={`px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm bg-gray-700 ${
               errors.numGuests ? "border border-red-500" : ""
             }`}
             required
@@ -632,7 +634,7 @@ function ReservationForm({ table }: { table: tableDataInterface }) {
             defaultValue=""
             name="observations"
             id="observations"
-            className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm text-black"
+            className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm text-black bg-gray-200"
             placeholder="Any pets, allergies, special requirements, etc.?"
           />
         </div>

@@ -1,6 +1,6 @@
 "use server";
 // import axios from "axios"
-import { createBooking, newBookingData } from "./data-service";
+import { createBooking, loginUser, newBookingData, signupUser } from "./data-service";
 import { revalidatePath } from "next/cache";
 import { bookingDataInterface } from "../_components/ReservationForm";
 
@@ -37,4 +37,38 @@ export async function createReservationAction({
   revalidatePath(`/tables/${bookingData.tableId}`);
 
   return hasBookingCreated;
+}
+
+
+export interface userDataInterface{
+  name:string
+  password:string
+}
+
+export async function signupAction(
+  userData:userDataInterface
+) {
+
+  console.log(userData);
+  const res = await signupUser(userData);
+  console.log(res,"=======================")
+  if(res.status==="fail"||res.status==="success"){
+    return res;
+  }
+  return null;
+  // return hasBookingCreated;
+}
+export async function loginAction(
+  userData:userDataInterface
+) {
+
+  // console.log(userData);
+  const res = await loginUser(userData);
+  console.log(res,"=======================")
+  if(res.status==="fail"||res.status==="success"){
+    return res;
+  }
+
+  return null
+  // return hasBookingCreated;
 }

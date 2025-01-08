@@ -1,0 +1,24 @@
+.custom-scroll {
+    scrollbar-width: thin; /* Options: auto, thin */
+    /* scrollbar-color: #888 #111827; thumb color, track color */
+    scrollbar-color: #4b5563 #374151;
+  }
+  
+  .custom-scroll::-webkit-scrollbar {
+    width: !4px; /* Customize the scrollbar width */
+    height: !4px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: #3498db; /* Set a custom color */
+    border-radius: !4px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #2980b9; /* Hover effect */
+  }
+  
+  .custom-scroll::-webkit-scrollbar-track {
+    background: #e0e0e0; /* Track color */
+    border-radius: !2px;
+  }

@@ -135,17 +135,30 @@ function DateSelector({
     <div className="flex flex-col justify-center gap-4 !w-full bg-gray-800 items-center">
       <DayPicker
         styles={{
-          root: { width: "100%" },
+          root: { width: "100%", maxWidth: "100%" },
         }}
-        className="sm:pt-5 !w-full flex justify-center items-center"
+        className=" !w-full bg-red-50/10 !m-0 !p-2"
         mode="single"
         onSelect={handleSelectedDate}
         selected={selectedDate}
         classNames={{
           today: ` text-yellow-400`,
           selected: `bg-amber-500 border-amber-500 text-black`,
-          chevron: `${defaultClassNames.chevron} !fill-yellow-400`,
-          root: `${defaultClassNames.root} shadow-lg p-5 `,
+          chevron: `${defaultClassNames.chevron} !fill-yellow-400 !w-full`,
+          root: `${defaultClassNames.root} !w-full shadow-lg`,
+          // month_grid:"bg-red-500 !w-full min-w-full !max-w-full",
+          // month:"bg-green-500 !flex flex-col !w-full !max-w-full p-0 m-0",
+          // weekdays:"!w-full bg-yellow-500 max-w-full flex w-full flex-1",
+          // weekday:"sm:!text-sm",
+          // weeks:"bg-gray-200 !w-full",
+          // week:"bg-red-100",
+          // week_number:"bg-red-100",
+          // weekday:"bg-red-100",
+          // weekdays:"bg-red-100",
+          // day:"bg-green-200 text-center",
+          day_button:" text-center"
+          // weeks:"bg-gray-200",
+          
         }}
         captionLayout="dropdown"
         numberOfMonths={1}
@@ -154,7 +167,8 @@ function DateSelector({
           ...(lastAvailableDate ? [{ after: lastAvailableDate }] : []),
         ]}
       />
-      <div className="flex items-center justify-center px-1 md:px-8 bg-accent-500 text-primary-800 h-[72px] !w-full rounded-lg sm:rounded-none">
+      <div className="flex items-center justify-center px-1 md:px-8 bg-accent-500 text-primary-800 
+      h-16  sm:h-[72px] !w-full rounded-lg sm:rounded-none">
         <div className="flex items-baseline sm:gap-2 md:gap-6">
           <p className="flex gap-2 justify-center">
             <span className="text-xl md:text-2xl">${price}</span>

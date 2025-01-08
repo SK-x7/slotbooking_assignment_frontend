@@ -1,6 +1,7 @@
 import axios from "axios";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { userDataInterface } from "./actions";
 
 export interface newBookingData{
     name:string,
@@ -80,3 +81,52 @@ export async function getUserBookingsFromApi(username:string) {
     }
     
 }
+
+
+export async function signupUser(userData:userDataInterface) {
+    console.log(userData.name.length,"------------")
+    if(!(userData.name.length)||!(userData.password.length)) return false;
+    
+    
+    console.log(userData,"--------------------------")
+    // localhost:8080/api/v1/bookings/satyen
+    // const res = await axios.post(`${API_URL}/api/v1/users`,userData);
+    const res = await axios.post(`http:localhost:8080/api/v1/users/signup`,userData);
+    // console.log(res.data);
+    if(res?.data){
+        return res?.data;
+    }
+    
+    return null;
+    // if(res.data.status==="success"){
+    //     console.log(res.data.bookingsData.bookings);
+    //     return res.data.bookingsData.bookings;
+    // }else{
+    //     return [];
+    // }
+}
+
+export async function loginUser(userData:userDataInterface) {
+    // console.log(userData.name.length,"------------")
+    if(!(userData.name.length)||!(userData.password.length)) return false;
+    
+    
+    // console.log(userData,"--------------------------")
+    // localhost:8080/api/v1/bookings/satyen
+    // const res = await axios.post(`${API_URL}/api/v1/users`,userData);
+    const res = await axios.post(`http:localhost:8080/api/v1/users`,userData);
+    // console.log(res.data);
+    if(res?.data){
+        return res?.data;
+    }
+    
+    return null;
+    // if(res.data.status==="success"){
+    //     console.log(res.data.bookingsData.bookings);
+    //     return res.data.bookingsData.bookings;
+    // }else{
+    //     return [];
+    // }
+}
+
+

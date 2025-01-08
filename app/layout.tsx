@@ -5,6 +5,7 @@ import "./globals.css";
 import { UserProvider } from "./_components/UserContext";
 import { ReservationProvider } from "./_components/ReservationContext";
 import Username from "./_components/Username";
+import Header from "./_components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,14 +37,15 @@ export default function RootLayout({
           
           
         <section className="flex flex-col h-screen !min-h-screen">
-    <header className="flex justify-between items-center bg-gray-900 min-h-14  text-white px-2 lg:px-7 border-b-2 border-gray-800">
+    {/* <header className="flex justify-between items-center bg-gray-900 min-h-14  text-white px-2 lg:px-7 border-b-2 border-gray-800">
       <Link href={"/"} className="capitalize">Best restaurant</Link>
       <div className="flex gap-1 text-xs sm:text-sm sm:gap-5">
         <Link href={"/tables"} className="capitalize">Tables</Link>
         <Link href={"/bookings"} className="capitalize">My Bookings</Link>
       <Username></Username>
       </div>
-    </header>
+    </header> */}
+    <Header></Header>
     
     {/* <main className="flex-1 overflow-y-scroll"> */}
     <main className="flex-1">

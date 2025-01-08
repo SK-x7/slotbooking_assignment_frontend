@@ -15,7 +15,7 @@ function TimeSlotSelector() {
     if(!isClient)  return <div></div>
 
   return (
-    <div className='!w-full flex justify-center items-center py-10 bg-gray-800'>
+    <div className='!w-full flex justify-center items-center py-3 md:py-[21px] lg:py-10 bg-gray-800'>
         <div className=' flex justify-center bg-'>
             
         {

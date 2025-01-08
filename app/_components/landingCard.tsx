@@ -25,7 +25,7 @@ function LandingCard() {
         <input type="text" id='password' name='password' maxLength={8} minLength={8} onChange={handleChange}/> */}
         {
           (!isLoggedIn||!username)?<Link href={"/login"} className="bg-yellow-400 py-2 px-3 capitalize rounded-xl mt-5 sm:mt-7 w-full sm:w-1/4 text-xl">Login-Now</Link>:
-            <Link href={"/login"} className="bg-yellow-400 py-2 px-3 capitalize rounded-xl mt-5 sm:mt-7 w-full sm:w-1/4 text-xl">Book-Table Now</Link>
+            <Link href={"/tables"} className="bg-yellow-400 py-2 px-3 capitalize rounded-xl mt-5 sm:mt-7 w-full sm:w-1/4 text-xl">Book-Table Now</Link>
           
         }
         
